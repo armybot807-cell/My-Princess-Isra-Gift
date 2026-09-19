@@ -81,10 +81,11 @@ h1,h2{margin:8px 0 14px;text-align:center;color:#ffd2e7}
     </div>
 
     <div class="music">
-      <button class="music-btn" onclick="document.getElementById('audioFile').click()">🎵 Add / Play Music</button>
-      <input id="audioFile" class="file-input" type="file" accept="audio/*" onchange="loadMusic(this)">
-      <audio id="player" controls style="display:none;width:100%;margin-top:12px"></audio>
-      <div class="small">For “Let The World Burn”, select the audio file from your phone. The site doesn't include copyrighted music automatically.</div>
+      <button class="music-btn" onclick="playMusic()">🎵 Play Music</button>
+      <audio id="player" controls preload="auto" style="width:100%;margin-top:12px">
+        <source src="je_t_aime_1min.mp3" type="audio/mpeg">
+      </audio>
+      <div class="small">Je T’aime 💗 — first 1 minute</div>
     </div>
   </div>
 </section>
@@ -167,6 +168,9 @@ function loadMusic(input){
   player.style.display='block';
   player.play().catch(()=>{});
 }
+</script>
+<script>
+function playMusic(){const p=document.getElementById('player');p.play().catch(()=>{});}
 </script>
 </body>
 </html>
